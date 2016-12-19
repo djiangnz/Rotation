@@ -35,6 +35,9 @@
     [super pushViewController:viewController animated:animated];
 }
 
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return [[self.viewControllers lastObject] preferredInterfaceOrientationForPresentation];
+}
 
 
 
