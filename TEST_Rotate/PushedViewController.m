@@ -7,6 +7,7 @@
 //
 
 #import "PushedViewController.h"
+#import <objc/message.h>
 
 @interface PushedViewController ()
 @property (assign, nonatomic, getter=isFullScreen) BOOL fullScreen;
@@ -17,11 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeRight] forKey:@"orientation"];
 }
+
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     NSLog(@"MARK: %s, %d", __PRETTY_FUNCTION__, __LINE__);
-    return UIInterfaceOrientationMaskAllButUpsideDown;
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -31,7 +34,7 @@
 
 - (BOOL)shouldAutorotate {
     NSLog(@"MARK: %s, %d", __PRETTY_FUNCTION__, __LINE__);
-    return NO;
+    return YES;
 }
 
 

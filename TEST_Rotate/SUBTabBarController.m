@@ -50,11 +50,11 @@
     return [nav.topViewController supportedInterfaceOrientations];
 }
 
-//- (BOOL)shouldAutorotate {
-//    NSLog(@"MARK: %s, %d", __PRETTY_FUNCTION__, __LINE__);
-//    SUBNavgationController *nav = self.viewControllers[self.selectedIndex];
-//    return [nav.topViewController shouldAutorotate];
-//}
+- (BOOL)shouldAutorotate {
+    NSLog(@"MARK: %s, %d", __PRETTY_FUNCTION__, __LINE__);
+    SUBNavgationController *nav = self.viewControllers[self.selectedIndex];
+    return [nav.topViewController shouldAutorotate];
+}
 
 
 @end
